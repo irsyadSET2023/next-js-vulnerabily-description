@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Payload Processing - CVE-2025-66478</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         @media print {
-            body { margin: 0; }
+            body { margin: 0; padding: 10mm; }
             .no-print { display: none; }
         }
         
@@ -16,8 +20,14 @@
             color: #333;
             max-width: 210mm;
             margin: 0 auto;
-            padding: 20mm;
+            padding: 20px;
             background: #fff;
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
         }
         
         .header {
@@ -33,16 +43,39 @@
             font-size: 28px;
         }
         
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .header p {
+                font-size: 14px;
+            }
+        }
+        
         h2 {
             color: #1976d2;
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
             margin-top: 30px;
+            font-size: 24px;
         }
         
         h3 {
             color: #455a64;
             margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            h2 {
+                font-size: 20px;
+                margin-top: 25px;
+            }
+            
+            h3 {
+                font-size: 16px;
+            }
         }
         
         .step-box {
@@ -91,6 +124,15 @@
             margin: 15px 0;
         }
         
+        @media screen and (max-width: 768px) {
+            pre {
+                padding: 10px;
+                font-size: 11px;
+                margin: 10px -15px;
+                border-radius: 0;
+            }
+        }
+        
         pre code {
             background: none;
             color: inherit;
@@ -107,6 +149,18 @@
             white-space: pre-wrap;
             font-size: 13px;
             line-height: 1.8;
+            overflow-x: auto;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .flow-diagram {
+                padding: 12px;
+                font-size: 11px;
+                margin: 15px -15px;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
         }
         
         .arrow {
@@ -123,22 +177,52 @@
             cursor: pointer;
             font-size: 16px;
             margin: 20px 0;
+            width: 100%;
+            max-width: 300px;
+            display: block;
         }
         
         .btn-print:hover {
             background: #1565c0;
         }
         
+        @media screen and (max-width: 768px) {
+            .btn-print {
+                font-size: 14px;
+                padding: 10px 20px;
+                position: sticky;
+                top: 10px;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            }
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media screen and (max-width: 768px) {
+            table {
+                font-size: 13px;
+            }
         }
         
         th, td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
+        }
+        
+        @media screen and (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 12px;
+            }
         }
         
         th {
@@ -162,8 +246,21 @@
             padding-left: 30px;
         }
         
+        @media screen and (max-width: 768px) {
+            ul, ol {
+                padding-left: 20px;
+            }
+        }
+        
         li {
             margin: 10px 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            li {
+                margin: 8px 0;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
